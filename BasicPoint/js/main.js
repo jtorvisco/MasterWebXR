@@ -5,6 +5,7 @@ import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFa
 init()
 animate()
 
+let container;
 let point;
 let camera, scene, renderer;
 
