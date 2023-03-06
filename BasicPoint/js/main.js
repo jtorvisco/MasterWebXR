@@ -48,6 +48,16 @@ function init() {
     const material = new THREE.PointsMaterial( { color: 0x888888 } );
     point = new THREE.Points(geometry, material)
     scene.add(point)
+    
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.shadowMap.enabled = true;
+    renderer.xr.enabled = true;
+    container.appendChild( renderer.domElement );
+
+    document.body.appendChild( VRButton.createButton( renderer ) );
 }
 
 function animate() {
