@@ -42,25 +42,11 @@ function init() {
     light.shadow.mapSize.set( 4096, 4096 );
     scene.add( light );
   
-    const vertices = new Float32Array( [
-        -1.0, -1.0,  1.0,
-         1.0, -1.0,  1.0,
-         1.0,  1.0,  1.0,
-
-         1.0,  1.0,  1.0,
-        -1.0,  1.0,  1.0,
-        -1.0, -1.0,  1.0
-    ] );
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
-
-    const material = new THREE.MeshStandardMaterial( {
-                    color: Math.random() * 0xffffff,
-                    roughness: 0.7,
-                    metalness: 0.0
-            } );
-    point = new THREE.Points(geometry, material)
-    scene.add(point)
+    var dotGeometry = new THREE.Geometry();
+    dotGeometry.vertices.push(new THREE.Vector3( 0, 0, 0));
+    var dotMaterial = new THREE.PointsMaterial( { size: 1, sizeAttenuation: false } );
+    var dot = new THREE.Points( dotGeometry, dotMaterial );
+    scene.add( dot );
     
     const geometry2 = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
     const material2 = new THREE.MeshStandardMaterial( {
