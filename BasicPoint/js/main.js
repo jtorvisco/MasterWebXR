@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { VRButton } from 'three/addons/webxr/VRButton.js';
 import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 
-init()
-animate()
-
 let container;
 let point;
 let camera, scene, renderer;
+
+init()
+animate()
 
 function init() {
     container = document.createElement( 'div' );
