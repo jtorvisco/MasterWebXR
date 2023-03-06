@@ -3,7 +3,7 @@ import { VRButton } from 'three/addons/webxr/VRButton.js';
 import { XRControllerModelFactory } from 'three/addons/webxr/XRControllerModelFactory.js';
 
 let container;
-let point;
+let point, point2;
 let camera, scene, renderer;
 
 init()
@@ -48,6 +48,17 @@ function init() {
     const material = new THREE.PointsMaterial( { color: 0x888888 } );
     point = new THREE.Points(geometry, material)
     scene.add(point)
+    
+    const geometry2 = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+    const material2 = new THREE.MeshStandardMaterial( {
+                    color: Math.random() * 0xffffff,
+                    roughness: 0.7,
+                    metalness: 0.0
+            } );
+    
+    
+    point2 = new THREE.Mesh(geometry2, material2);
+    scene.add(point2)
     
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
