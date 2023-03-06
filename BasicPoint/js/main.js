@@ -46,7 +46,7 @@ function init() {
     geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( 5, 3 ) );
 
     const material = new THREE.PointsMaterial( { color: 0x888888 } );
-    point = THREE.Points(geometry, material)
+    point = new THREE.Points(geometry, material)
     scene.add(point)
 }
 
